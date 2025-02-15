@@ -1,19 +1,20 @@
 // pages/index.js
-import Head from 'next/head';
-import Header from '../components/header';
+import Header from '../components/header/header'
+import { Montserrat } from 'next/font/google';
+import Content from "../components/Content/Content"
+import Footer from '../components/Footer/Footer';
+const montserrat = Montserrat({
+    weight: ['400', '700'],
+    subsets: ['latin', 'cyrillic']
+});
 
 export default function Home() {
     return (
-        <div>
-            <Head>
-                <title>Простой сайт на Next.js</title>
-    <meta name="description" content="Пример простого сайта с использованием Next.js" />
-        </Head>
-        <Header />
         <main>
-            <h1>Добро пожаловать на мой сайт!</h1>
-    <p>Это пример простого сайта на Next.js.</p>
-    </main>
-    </div>
+            <Header></Header>
+            <div className={`${"BottonFooter"} ${montserrat.className}`}>Книга памяти</div>
+            <Content></Content>
+            <Footer></Footer>
+        </main>
 );
 }
