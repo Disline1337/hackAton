@@ -1,19 +1,15 @@
-// pages/index.js
-import Head from 'next/head';
-import Header from '../components/header';
+import Link from 'next/link';
 
 export default function Home() {
     return (
-        <div>
-            <Head>
-                <title>Простой сайт на Next.js</title>
-    <meta name="description" content="Пример простого сайта с использованием Next.js" />
-        </Head>
-        <Header />
-        <main>
-            <h1>Добро пожаловать на мой сайт!</h1>
-    <p>Это пример простого сайта на Next.js.</p>
-    </main>
-    </div>
-);
+        <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+            <h1>Главная страница</h1>
+            <p>
+                Перейти на страницу входа:{' '}
+                <Link href="/login">
+                    <a style={{ color: 'blue', textDecoration: 'underline' }}>Войти</a>
+                </Link>
+            </p>
+        </div>
+    );
 }
