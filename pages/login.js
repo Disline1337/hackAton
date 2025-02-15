@@ -7,7 +7,7 @@ export default function LoginPage() {
 
             {/* Исправленная ссылка */}
             <Link
-                href="/api/auth/elk"
+                href="/elk_callback"
                 style={{ color: 'blue', textDecoration: 'underline' }}
             >
                 Войти через ЕЛК

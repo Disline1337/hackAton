@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
     if (!code) {
         // Перенаправление на авторизацию в ЕЛК
-        const authUrl = `https://lk.orb.ru/oauth/authorize?client_id=25&redirect_uri=http://hackathon_10.orb.ru/api/auth/elk&response_type=code&scope=personal_data+email+phone&state=http://hackathon_10.orb.ru/`;
+        const authUrl = `https://lk.orb.ru/oauth/authorize?client_id=25&redirect_uri=http://hackathon_10.orb.ru/elk_callback&response_type=code&scope=personal_data+email+phone&state=http://hackathon_10.orb.ru/`;
         return res.redirect(authUrl);
     }
 
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
         const tokenResponse = await axios.post('https://lk.orb.ru/oauth/token', {
             client_id: 25,
             client_secret: 'A07MVx7dSnHXjvzDDTKs7cQQUtPjrWpjZvR5Kx18',
-            redirect_uri: 'http://hackathon_10.orb.ru/api/auth/elk',
+            redirect_uri: 'http://hackathon_10.orb.ru/elk_callback',
             code,
             grant_type: 'authorization_code',
         });
