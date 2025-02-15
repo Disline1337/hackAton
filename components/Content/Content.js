@@ -12,17 +12,17 @@ export default function Content() {
     const places = ['Hospital', 'School', 'Office'];
 
     // Увеличим количество элементов для демонстрации пагинации
-    const SVOSET = Array(100).fill().map((_, i) => ({
+    const SET = Array(100).fill().map((_, i) => ({
         image: "https://www.deepseek.com/_next/image?url=https%3A%2F%2Fcdn.deepseek.com%2Flogo.png&w=1920&q=75",
-        name: `SVO${i + 1}`,
-        descript: "zvzvzvzvzvzvzvzvzvzvzvzv",
+        name: `set${i + 1}`,
+        descript: "dsfsdf",
         born: "1414123123"
     }));
 
-    const totalPages = Math.ceil(SVOSET.length / itemsPerPage);
+    const totalPages = Math.ceil(SET.length / itemsPerPage);
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = SVOSET.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = SET.slice(indexOfFirstItem, indexOfLastItem);
 
     const handleToggle = (list, setList, item) => {
         if (list.includes(item)) {
