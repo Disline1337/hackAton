@@ -86,7 +86,7 @@ const RegComponent = () => {
 
                 <p className={styles.loginText}>
                     Already have an account?{' '}
-                    <Link href="/Login" className={styles.loginLink}>
+                    <Link href="/login" className={styles.loginLink}>
                         Log in here
                     </Link>
                 </p>

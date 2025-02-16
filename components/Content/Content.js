@@ -1,4 +1,6 @@
-﻿import { useState } from 'react';
+﻿// components/Content/Content.js
+import { useState } from 'react';
+import Link from 'next/link'; // Import Link from 'next/link'
 import style from './Content.module.css';
 import HumanBlock from '../HumanBlock/HumanBlock';
 
@@ -10,9 +12,6 @@ export default function Content() {
 
     const cities = ['Moscow', 'London', 'Paris'];
     const places = ['Hospital', 'School', 'Office'];
-
-    // Увеличим количество элементов для демонстрации пагинации
-
 
     const desk = [
         {
@@ -145,7 +144,7 @@ export default function Content() {
             HeroFeat: "В ходе обороны Севастополя участвовал в отражении нескольких атак врага.",
             Awards: "Награжден медалью «За оборону Севастополя»."
         },
-        
+
     ];
 
     const totalPages = Math.ceil(desk.length / itemsPerPage);
@@ -209,7 +208,9 @@ export default function Content() {
             <div className={style.contentWrapper}>
                 <div className={style.HumanBlocks}>
                     {desk.map(elem => (
-                        <HumanBlock key={elem.name} props={elem} />
+                        <Link href="/FullInfo" key={elem.name}>
+                            <HumanBlock props={elem} />
+                        </Link>
                     ))}
                 </div>
 

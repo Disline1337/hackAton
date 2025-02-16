@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Header from '../components/header/header';
+import Footer from '../components/Footer/Footer';
+import ProfilComponent from "../components/ProfileComponent/ProfileComponent"
 
 export default function ProfilePage() {
     const [user, setUser] = useState(null);
@@ -16,7 +19,7 @@ export default function ProfilePage() {
         }
     }, []);
 
-    if (!user) {
+    if (user) {
         return (
             <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
                 <h1>Доступ запрещен</h1>
@@ -30,17 +33,10 @@ export default function ProfilePage() {
     }
 
     return (
-        <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-            <h1>Профиль пользователя</h1>
-            <p>Имя: {user.personal_data?.first_name}</p>
-            <p>Фамилия: {user.personal_data?.last_name}</p>
-            <p>Email: {user.email}</p>
-            <p>Телефон: {user.phone}</p>
-            <p>
-                <Link href="/" style={{ color: 'blue', textDecoration: 'underline' }}>
-                    Вернуться на главную
-                </Link>
-            </p>
+        <div>
+            <Header></Header>
+            <ProfilComponent user={user }></ProfilComponent>
+            <Footer></Footer>
         </div>
     );
 }
