@@ -5,16 +5,36 @@ import styles from './RegComponent.module.css';
 
 const RegComponent = () => {
     const [formData, setFormData] = useState({
-        name: '',
+        fio: '',
+        phoneNumber: '',
         email: '',
         password: '',
         confirmPassword: ''
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        console.log(formData);
+
+        try {
+            const response = await fetch('/api/registerUser', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert('User registered successfully!');
+            } else {
+                alert(`Error: ${data.error}`);
+            }
+        } catch (error) {
+            alert('An error occurred while registering the user.');
+            console.error(error);
+        }
     };
 
     const handleChange = (e) => {
@@ -30,12 +50,25 @@ const RegComponent = () => {
                 <h1 className={styles.title}>Create Account</h1>
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <div className={styles.formGroup}>
-                        <label htmlFor="name" className={styles.label}>Full Name</label>
+                        <label htmlFor="fio" className={styles.label}>Full Name</label>
                         <input
                             type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
+                            id="fio"
+                            name="fio"
+                            value={formData.fio}
+                            onChange={handleChange}
+                            className={styles.input}
+                            required
+                        />
+                    </div>
+
+                    <div className={styles.formGroup}>
+                        <label htmlFor="phoneNumber" className={styles.label}>Number</label>
+                        <input
+                            type="text"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            value={formData.phoneNumber}
                             onChange={handleChange}
                             className={styles.input}
                             required
@@ -86,7 +119,7 @@ const RegComponent = () => {
 
                 <p className={styles.loginText}>
                     Already have an account?{' '}
-                    <Link href="/Login" className={styles.loginLink}>
+                    <Link href="/login" className={styles.loginLink}>
                         Log in here
                     </Link>
                 </p>

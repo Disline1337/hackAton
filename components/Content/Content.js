@@ -8,8 +8,8 @@ export default function Content() {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
 
-    const cities = ['Moscow', 'London', 'Paris'];
-    const places = ['Hospital', 'School', 'Office'];
+    const born_place = ['с. Новомусино', 'с. Решивка', 'Решето', 'чё нибудь ещё'];
+    const duty_place = ['А', 'Б', 'В'];
 
     // Увеличим количество элементов для демонстрации пагинации
 
@@ -170,7 +170,7 @@ export default function Content() {
             <div className={style.Filther}>
                 <div className={style.filterSection}>
                     <h3 className={style.filterTitle}>Cities</h3>
-                    {cities.map(city => (
+                    {born_place.map(city => (
                         <div
                             key={city}
                             className={style.filterItem}
@@ -186,7 +186,7 @@ export default function Content() {
 
                 <div className={style.filterSection}>
                     <h3 className={style.filterTitle}>Place of Service</h3>
-                    {places.map(place => (
+                    {duty_place.map(place => (
                         <div
                             key={place}
                             className={style.filterItem}

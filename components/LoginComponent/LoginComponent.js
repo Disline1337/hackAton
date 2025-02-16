@@ -1,43 +1,89 @@
-// components/LoginComponent/LoginComponent.js
-import style from './LoginComponent.module.css';
+import { useState } from 'react';
+import styles from './LoginComponent.module.css'; // Assuming you have a CSS module for styling
+import Link from 'next/link';
 
-export default function LoginComponent() {
+const LoginComponent = () => {
+    const [formData, setFormData] = useState({
+        emailOrPhone: '',
+        password: ''
+    });
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('/api/loginUser', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert('Login successful!');
+                // You can redirect to a dashboard or store the user session/token here
+            } else {
+                alert(`Error: ${data.error}`);
+            }
+        } catch (error) {
+            alert('An error occurred while logging in.');
+            console.error(error);
+        }
+    };
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
     return (
-        <div className={style.LoginComponent}>
-            <div className={style.formWrapper}>
-                <h2 className={style.title}>Login to Account</h2>
-
-                <form className={style.form}>
-                    <div className={style.formGroup}>
-                        <label className={style.label}>Email</label>
+        <div className={styles.LoginComponent}>
+            <div className={styles.formWrapper}>
+                <h1 className={styles.title}>Login</h1>
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="emailOrPhone" className={styles.label}>Email or Phone Number</label>
                         <input
-                            type="email"
-                            className={style.input}
-                            placeholder="Enter your email"
+                            type="text"
+                            id="emailOrPhone"
+                            name="emailOrPhone"
+                            value={formData.emailOrPhone}
+                            onChange={handleChange}
+                            className={styles.input}
+                            required
                         />
                     </div>
 
-                    <div className={style.formGroup}>
-                        <label className={style.label}>Password</label>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="password" className={styles.label}>Password</label>
                         <input
                             type="password"
-                            className={style.input}
-                            placeholder="Enter password"
+                            id="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            className={styles.input}
+                            required
                         />
                     </div>
 
-                    <button type="submit" className={style.submitButton}>
-                        Sign In
-                    </button>
+                    <button type="submit" className={styles.submitButton}>Login</button>
                 </form>
 
-                <p className={style.registerText}>
-                    Don't have an account? {' '}
-                    <a href="/Reg" className={style.registerLink}>
-                        Register
-                    </a>
+                <p className={styles.registerText}>
+                    Don't have an account?{' '}
+                    <Link href="/register" className={styles.registerLink}>
+                        Register here
+                    </Link>
                 </p>
             </div>
         </div>
     );
-}
+};
+
+export default LoginComponent;

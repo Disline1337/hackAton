@@ -7,7 +7,6 @@ const montserrat = Montserrat({
     weight: ['400', '700'],
     subsets: ['latin', 'cyrillic']
 });
-
 export default function Home() {
     return (
         <main>

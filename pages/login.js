@@ -8,7 +8,6 @@ export default function LoginPage() {
             <Header></Header>
             <LoginComponent></LoginComponent>
             <Footer></Footer>
-
         </div>
     );
 }

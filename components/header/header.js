@@ -45,7 +45,7 @@ const Header = () => {
                         className={styles.searchInput} 
                     />
                 </div>
-                <Link className={styles.link} href="/Reg"><CgProfile className={styles.CgProfile} /></Link>
+                <Link className={styles.link} href="/login"><CgProfile className={styles.CgProfile} /></Link>
 
             </div>
         </header>

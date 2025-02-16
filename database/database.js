@@ -1,5 +1,10 @@
 const mariadb = require("mariadb");
-const pool = mariadb.createPool({host:"85.192.30.147", port:3306, user:"user", password:"hackAton2025", database:"kpoo", connectionLimit:50})
+const pool = mariadb.createPool({
+    host: '85.192.30.147',
+    user:'user',
+    password: 'hackAton2025',
+    connectionLimit: 5
+});
 
 export async function registerUser(fio, number, email, password) {
     let conn;
