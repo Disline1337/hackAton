@@ -1,0 +1,17 @@
+
+body, html {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.BottonFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    font-size: 20PX;
+    font-weight: 900;
+
+}

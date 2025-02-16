@@ -1,0 +1,117 @@
+.mainblock {
+    padding-top: 3vh;
+    background-color: #cccccc;
+    min-height: 81vh;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+.Filther {
+    width: 25%;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.HumanBlocks {
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filterSection {
+    margin-bottom: 2rem;
+}
+
+.filterTitle {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.filterItem {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .filterItem:hover {
+        background: #f5f5f5;
+    }
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: transparent;
+}
+
+.selectedCheckbox {
+    border-color: #4CAF50;
+    background: #4CAF50;
+    color: white;
+}
+
+.selectedFilters {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+
+.contentWrapper {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+    .pagination button {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        background: #f8f8f8;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+        .pagination button:hover:not(:disabled) {
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+.activePage {
+    background: #4CAF50 !important;
+    color: white;
+    border-color: #4CAF50 !important;
+}

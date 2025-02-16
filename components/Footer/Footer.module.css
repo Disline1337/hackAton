@@ -1,0 +1,88 @@
+/* components/Footer/Footer.module.css */
+.Footer {
+    background-color: #3a485a;
+    color: white;
+    padding: 0.7rem 0;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.logoSection {
+    flex: 1 1 300px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.copyright {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.navSection {
+    flex: 2 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-direction: row;
+}
+
+.navLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-right: 2rem;
+}
+
+    .navLinks a {
+        color: white;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+    }
+
+        .navLinks a:hover {
+            opacity: 0.8;
+        }
+
+.searchButton {
+    align-self: flex-start;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+    .searchButton:hover {
+        background-color: #45a049;
+    }
+
+@media (max-width: 768px) {
+    .footerContent {
+        flex-direction: column;
+    }
+
+    .navLinks {
+        flex-direction: column;
+    }
+
+    .searchButton {
+        width: 100%;
+        text-align: center;
+    }
+}

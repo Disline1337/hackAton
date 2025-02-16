@@ -1,0 +1,58 @@
+.HumanBlock {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    padding: 1.5rem;
+    width: 90%;
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+    .HumanBlock:hover {
+        transform: translateY(-2px);
+    }
+
+.imageContainer {
+    width: 120px;
+    height: 120px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.descript {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+}
+
+.bornDate {
+    font-size: 0.9rem;
+    color: #888;
+}

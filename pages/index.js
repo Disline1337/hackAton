@@ -1,15 +1,20 @@
-import Link from 'next/link';
+// pages/index.js
+import Header from '../components/header/header'
+import { Montserrat } from 'next/font/google';
+import Content from "../components/Content/Content"
+import Footer from '../components/Footer/Footer';
+const montserrat = Montserrat({
+    weight: ['400', '700'],
+    subsets: ['latin', 'cyrillic']
+});
 
 export default function Home() {
     return (
-        <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-            <h1>Главная страница</h1>
-            <p>
-                Перейти на страницу входа:{' '}
-                <Link href="/login" style={{ color: 'blue', textDecoration: 'underline' }}>
-                    Войти
-                </Link>
-            </p>
-        </div>
-    );
+        <main>
+            <Header></Header>
+            <div className={`${"BottonFooter"} ${montserrat.className}`}>Книга памяти</div>
+            <Content></Content>
+            <Footer></Footer>
+        </main>
+);
 }
