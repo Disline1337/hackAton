@@ -15,6 +15,9 @@ body, html {
     font-weight: 900;
 
 }
+a:visited {
+    color: inherit; /* Сбрасываем изменение цвета после посещения */
+}
 
 .RegPage {
     height: 100%;
