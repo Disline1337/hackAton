@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-export default function LoginPage() {
+export default function RegisterPage() {
     return (
         <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
             <h1>Страница входа</h1>
@@ -15,5 +15,5 @@ export default function LoginPage() {
                 </Link>
             </p>
         </div>
-    );
+    )
 }
