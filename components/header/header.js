@@ -21,10 +21,10 @@ const Header = () => {
         <header className={`${styles.header} ${montserrat.className}`}>
             <ul className={styles.ul}>
                 <li>
-                    <Link className={styles.link} href="/about">О проекте</Link> {/* Changed from "About Project" to "О проекте" */}
+                    <Link className={styles.link} href="/">О проекте</Link> {/* Changed from "About Project" to "О проекте" */}
                 </li>
                 <li>
-                    <Link className={styles.link} href="/memory-book">Книга памяти</Link> {/* Changed from "Memory Book" to "Книга памяти" */}
+                    <Link className={styles.link} href="/">Книга памяти</Link> {/* Changed from "Memory Book" to "Книга памяти" */}
                 </li>
                 <li>
                     <Link className={styles.link} href="/MapPage">Интерактивная карта</Link> {/* Changed from "Interactive Map" to "Интерактивная карта" */}

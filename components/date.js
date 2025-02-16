@@ -1,7 +1,7 @@
 export const desk = [
     {
         id: 1,
-        image: "https://i.pinimg.com/originals/de/9a/09/de9a09644647ca86603af6c73bb542a7.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/47/47774.png",
         name: "Абдршин Рамиль Хайруллаевич",
         description: "Во время переправы через Днепр взвод, командованный сержантом Абдршиным, первым занял оборону и обеспечил успешную переправу всех остальных подразделений на другой берег.",
         DateAndPlaceOfBirth: ["11.01.1925", "с. Новомусино, Шарлыкский район, Оренбургская область"],
@@ -15,7 +15,7 @@ export const desk = [
     },
     {
         id: 2,
-        image: "https://i.pinimg.com/originals/de/9a/09/de9a09644647ca86603af6c73bb542a7.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/47/47774.png",
         name: "Иванов Иван Иванович",
         description: "Выделился в боях за освобождение Беларуси, лично уничтожив несколько вражеских танков.",
         DateAndPlaceOfBirth: ["15.05.1920", "Минск, Беларусь"],
@@ -29,7 +29,7 @@ export const desk = [
     },
     {
         id: 3,
-        image: "https://i.pinimg.com/originals/de/9a/09/de9a09644647ca86603af6c73bb542a7.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/47/47774.png",
         name: "Петров Петр Петрович",
         description: "Командир артиллерийского расчета, отличившийся в боях под Сталинградом.",
         DateAndPlaceOfBirth: ["10.03.1918", "Сталинград, СССР"],
@@ -43,7 +43,7 @@ export const desk = [
     },
     {
         id: 4,
-        image: "https://i.pinimg.com/originals/de/9a/09/de9a09644647ca86603af6c73bb542a7.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/47/47774.png",
         name: "Сидоров Сидор Сидорович",
         description: "Летчик-истребитель, сбивший более 20 вражеских самолетов.",
         DateAndPlaceOfBirth: ["22.06.1919", "Москва, СССР"],
@@ -57,7 +57,7 @@ export const desk = [
     },
     {
         id: 5,
-        image: "https://i.pinimg.com/originals/de/9a/09/de9a09644647ca86603af6c73bb542a7.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/47/47774.png",
         name: "Кузнецов Алексей Васильевич",
         description: "Сапер, обезвредивший более 100 мин в ходе войны.",
         DateAndPlaceOfBirth: ["05.09.1922", "Ленинград, СССР"],
@@ -71,7 +71,7 @@ export const desk = [
     },
     {
         id: 6,
-        image: "https://i.pinimg.com/originals/de/9a/09/de9a09644647ca86603af6c73bb542a7.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/47/47774.png",
         name: "Смирнов Александр Николаевич",
         description: "Медик, спасший более 200 раненых солдат.",
         DateAndPlaceOfBirth: ["12.04.1921", "Киев, СССР"],
@@ -85,7 +85,7 @@ export const desk = [
     },
     {
         id: 7,
-        image: "https://i.pinimg.com/originals/de/9a/09/de9a09644647ca86603af6c73bb542a7.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/47/47774.png",
         name: "Васильев Василий Васильевич",
         description: "Разведчик, добывший ценные сведения о вражеских войсках.",
         DateAndPlaceOfBirth: ["18.07.1923", "Одесса, СССР"],
@@ -99,7 +99,7 @@ export const desk = [
     },
     {
         id: 8,
-        image: "https://i.pinimg.com/originals/de/9a/09/de9a09644647ca86603af6c73bb542a7.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/47/47774.png",
         name: "Николаев Николай Николаевич",
         description: "Командир партизанского отряда, уничтожившего несколько вражеских эшелонов.",
         DateAndPlaceOfBirth: ["25.12.1917", "Минск, СССР"],
@@ -113,7 +113,7 @@ export const desk = [
     },
     {
         id: 9,
-        image: "https://i.pinimg.com/originals/de/9a/09/de9a09644647ca86603af6c73bb542a7.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/47/47774.png",
         name: "Михайлов Михаил Михайлович",
         description: "Артиллерист, отличившийся в боях за Берлин.",
         DateAndPlaceOfBirth: ["30.10.1924", "Москва, СССР"],
@@ -127,7 +127,7 @@ export const desk = [
     },
     {
         id: 10,
-        image: "https://i.pinimg.com/originals/de/9a/09/de9a09644647ca86603af6c73bb542a7.jpg",
+        image: "https://cdn-icons-png.flaticon.com/512/47/47774.png",
         name: "Алексеев Алексей Алексеевич",
         description: "Моряк, участвовавший в обороне Севастополя.",
         DateAndPlaceOfBirth: ["14.02.1920", "Севастополь, СССР"],
