@@ -7,8 +7,15 @@ import ProfilComponent from "../components/ProfileComponent/ProfileComponent"
 export default function ProfilePage() {
     const [user, setUser] = useState(null);
 
+    const user1 = {
+        id: 213,
+        fio: "dsfdsf",
+        email: "sdfsdf@fdsf",
+        phoneNumber: "234244423",
+    }
+
     useEffect(() => {
-        // Получение данных пользователя из cookies
+     
         const userData = document.cookie
             .split('; ')
             .find((row) => row.startsWith('user='))
@@ -22,10 +29,10 @@ export default function ProfilePage() {
     if (user) {
         return (
             <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-                <h1>Доступ запрещен</h1>
+                <h1>No</h1>
                 <p>
                     <Link href="/login" style={{ color: 'blue', textDecoration: 'underline' }}>
-                        Войти
+                        Join
                     </Link>
                 </p>
             </div>
@@ -35,7 +42,7 @@ export default function ProfilePage() {
     return (
         <div>
             <Header></Header>
-            <ProfilComponent user={user }></ProfilComponent>
+            <ProfilComponent user={user1 }></ProfilComponent>
             <Footer></Footer>
         </div>
     );

@@ -1,10 +1,9 @@
-
 import style from "./HumanBlock.module.css";
 
 export default function HumanBlock({ props, onClick }) {
     const handleClick = () => {
         if (onClick) {
-            onClick(props); 
+            onClick(props);
         }
     };
 

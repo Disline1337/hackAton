@@ -1,21 +1,26 @@
+import { useRouter } from 'next/router';
 import Footer from "../components/Footer/Footer";
+import FullInfoComponent from "../components/FullInfoComponent/FullInfoComponent";
 import Header from "../components/header/header";
-
+import { desk } from '../components/date'; 
 
 export default function FullInfo() {
-    const heroData = {
-        id: 1,
-        name: "Иван Иванов",
-        image: "https://example.com/hero.jpg",
-        born: "1920-1943",
-        awards: ["Орден Красной Звезды", "Медаль за отвагу"],
-        bio: "Полный текст биографии героя..."
-    };
+    const router = useRouter();
+    const { id } = router.query;
+
+  
+    const heroData = desk.find(item => item.id === parseInt(id));
+
+   
+    if (!heroData) {
+        return <div></div>;
+    }
+
     return (
         <div>
-            <Header></Header>
-            
-            <Footer></Footer>
+            <Header />
+            <FullInfoComponent heroData={heroData} />
+            <Footer />
         </div>
-    )
+    );
 }

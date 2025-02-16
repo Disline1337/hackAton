@@ -109,3 +109,78 @@
         height: 300px;
     }
 }
+
+
+/* Добавленные стили */
+.heroDescription {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.datesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.dateSection {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.dateTitle {
+    color: #3a485a;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.dateText {
+    color: #666;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.militaryInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.militaryItem {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.militaryLabel {
+    display: block;
+    color: #3a485a;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.titleInfo {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.titleName {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.titleDescription {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Существующие стили остаются без изменений */

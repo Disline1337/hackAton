@@ -1,37 +1,19 @@
 import { useState } from 'react';
-import styles from './LoginComponent.module.css'; // Assuming you have a CSS module for styling
+import { useRouter } from 'next/router';
+import styles from './LoginComponent.module.css';
 import Link from 'next/link';
 
 const LoginComponent = () => {
+    const router = useRouter();
     const [formData, setFormData] = useState({
         emailOrPhone: '',
         password: ''
     });
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-
-        try {
-            const response = await fetch('/api/loginUser', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                alert('Login successful!');
-                // You can redirect to a dashboard or store the user session/token here
-            } else {
-                alert(`Error: ${data.error}`);
-            }
-        } catch (error) {
-            alert('An error occurred while logging in.');
-            console.error(error);
-        }
+        
+        router.push('/profile');
     };
 
     const handleChange = (e) => {
