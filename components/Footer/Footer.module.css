@@ -9,11 +9,12 @@
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 2rem;
     padding: 0 1rem;
+    align-items: center;
 }
 
 .logoSection {
@@ -34,9 +35,9 @@
 .navSection {
     flex: 2 1 400px;
     display: flex;
-    flex-direction: column;
     gap: 1.5rem;
     flex-direction: row;
+    align-items: center;
 }
 
 .navLinks {

@@ -1,10 +1,10 @@
-// components/Header.js
+
 import Link from 'next/link';
 import styles from './header.module.css';
 import { Montserrat } from 'next/font/google';
 import { CgProfile } from "react-icons/cg";
 import { IoIosSearch } from "react-icons/io";
-import { useState } from 'react'; // Импортируйте useState для управления состоянием ввода
+import { useState } from 'react'; 
 
 const montserrat = Montserrat({
     weight: ['400', '700'],
@@ -12,10 +12,10 @@ const montserrat = Montserrat({
 });
 
 const Header = () => {
-    const [searchQuery, setSearchQuery] = useState(''); // Создайте состояние для текста поиска
+    const [searchQuery, setSearchQuery] = useState(''); 
 
     const handleInputChange = (e) => {
-        setSearchQuery(e.target.value); // Обновите состояние при изменении ввода
+        setSearchQuery(e.target.value); 
     };
 
     return (
@@ -42,10 +42,11 @@ const Header = () => {
                         value={searchQuery}
                         onChange={handleInputChange}
                         placeholder="Поиск"
-                        className={styles.searchInput} // Добавьте класс для поля ввода
+                        className={styles.searchInput} 
                     />
                 </div>
-                <CgProfile className={styles.CgProfile} />
+                <Link className={styles.link} href="/Reg"><CgProfile className={styles.CgProfile} /></Link>
+
             </div>
         </header>
     );

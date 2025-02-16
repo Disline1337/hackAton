@@ -13,7 +13,7 @@ export default function Content() {
 
     // Увеличим количество элементов для демонстрации пагинации
     const SET = Array(100).fill().map((_, i) => ({
-        image: "https://www.deepseek.com/_next/image?url=https%3A%2F%2Fcdn.deepseek.com%2Flogo.png&w=1920&q=75",
+        image: "https://cdn140.picsart.com/quicktools-logo.svg",
         name: `set${i + 1}`,
         descript: "dsfsdf",
         born: "1414123123"

@@ -1,4 +1,3 @@
-/* styles/header.module.css */
 
 .header {
     background-color: #373737;
@@ -34,22 +33,22 @@
     align-items: center;
     border: 1px white solid;
     border-radius: 10px;
-    height: 60%; /* Изменен для удобного отображения */
-    padding: 0 10px; /* Добавьте отступы для улучшения отображения */
+    height: 60%; 
+    padding: 0 10px; 
 }
 
 .searchInput {
-    background-color: transparent; /* Делаем фон прозрачным */
-    border: none; /* Убираем рамку */
-    color: white; /* Устанавливаем цвет текста */
-    outline: none; /* Убираем контур */
-    margin-left: 5px; /* Отступ между иконкой и полем ввода */
+    background-color: transparent; 
+    border: none; 
+    color: white; 
+    outline: none; 
+    margin-left: 5px; 
 }
 
-/* Убедитесь, что стили для CgProfile остаются как есть */
+
 .CgProfile {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
 }
 
 .link {
