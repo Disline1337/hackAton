@@ -8,8 +8,8 @@
 Сначала клонируйте репозиторий на свое устройство:
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
-cd your-repository-name
+git clone https://github.com/Disline1337/hackAton.git
+cd hackAton
 ```
 
 ## Шаг 2: Установить зависимости
