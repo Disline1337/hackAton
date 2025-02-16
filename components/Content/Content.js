@@ -5,26 +5,48 @@ import HumanBlock from '../HumanBlock/HumanBlock';
 import { desk } from "../date";
 
 export default function Content() {
-    const [selectedCities, setSelectedCities] = useState([]);
-    const [selectedPlaces, setSelectedPlaces] = useState([]);
+    // Состояния для фильтров
+    const [selectedBirthPlaces, setSelectedBirthPlaces] = useState([]);
+    const [selectedDeathPlaces, setSelectedDeathPlaces] = useState([]);
+    const [selectedMilitaryUnits, setSelectedMilitaryUnits] = useState([]);
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
 
-    const born_place = ['с. Новомусино', 'с. Решивка', 'Решето', 'чё нибудь ещё'];
-    const duty_place = ['А', 'Б', 'В'];
+    // Динамическое формирование фильтров из данных
+    const birthPlaces = [...new Set(desk.map(item => {
+        const [city, region] = item.DateAndPlaceOfBirth[1].split(', ');
+        return city.trim();
+    }))];
+
+    const deathPlaces = [...new Set(desk.map(item => {
+        const [city, region] = item.DateAndPlaceOfDepartureOrDeath[1].split(', ');
+        return city.trim();
+    }))];
+
+    const militaryUnits = [...new Set(desk.map(item =>
+        item.MilitaryRankAndJobTitle.split(',')[0].trim()
+    ))];
 
     // Функция для фильтрации данных
     const filteredDesk = desk.filter(elem => {
-        // Фильтрация по городам и местам службы
-        const cityMatch = selectedCities.length === 0 ||
-            selectedCities.some(city => elem.DateAndPlaceOfBirth[1].includes(city));
+        // Фильтрация по месту рождения
+        const birthPlace = elem.DateAndPlaceOfBirth[1].split(', ')[0];
+        const birthPlaceMatch = selectedBirthPlaces.length === 0 ||
+            selectedBirthPlaces.includes(birthPlace);
 
-        const placeMatch = selectedPlaces.length === 0 ||
-            selectedPlaces.some(place => elem.MilitaryRankAndJobTitle.includes(place));
+        // Фильтрация по месту смерти
+        const deathPlace = elem.DateAndPlaceOfDepartureOrDeath[1].split(', ')[0];
+        const deathPlaceMatch = selectedDeathPlaces.length === 0 ||
+            selectedDeathPlaces.includes(deathPlace);
 
-        // Фильтрация по дате
+        // Фильтрация по воинским частям
+        const militaryUnit = elem.MilitaryRankAndJobTitle.split(',')[0];
+        const militaryUnitMatch = selectedMilitaryUnits.length === 0 ||
+            selectedMilitaryUnits.includes(militaryUnit);
+
+        // Фильтрация по датам
         const parseDate = (dateStr) => {
             const [day, month, year] = dateStr.split('.');
             return new Date(`${year}-${month}-${day}`);
@@ -44,7 +66,7 @@ export default function Content() {
             if (end && deathDate <= end) dateMatch = true;
         }
 
-        return cityMatch && placeMatch && dateMatch;
+        return birthPlaceMatch && deathPlaceMatch && militaryUnitMatch && dateMatch;
     });
 
     // Пагинация
@@ -56,7 +78,7 @@ export default function Content() {
     // Сброс страницы при изменении фильтров
     useEffect(() => {
         setCurrentPage(1);
-    }, [selectedCities, selectedPlaces, startDate, endDate]);
+    }, [selectedBirthPlaces, selectedDeathPlaces, selectedMilitaryUnits, startDate, endDate]);
 
     // Функция для переключения фильтров
     const handleToggle = (list, setList, item) => {
@@ -76,63 +98,83 @@ export default function Content() {
     return (
         <div className={style.mainblock}>
             <div className={style.Filther}>
+                {/* Фильтр по месту рождения */}
                 <div className={style.filterSection}>
-                    <h3 className={style.filterTitle}>Cities</h3>
-                    {born_place.map(city => (
-                        <div
-                            key={city}
-                            className={style.filterItem}
-                            onClick={() => handleToggle(selectedCities, setSelectedCities, city)}
-                        >
-                            <div className={`${style.checkbox} ${selectedCities.includes(city) ? style.selectedCheckbox : ''}`}>
-                                {selectedCities.includes(city) && '✓'}
-                            </div>
-                            {city}
-                        </div>
-                    ))}
-                </div>
-
-                <div className={style.filterSection}>
-                    <h3 className={style.filterTitle}>Place of Service</h3>
-                    {duty_place.map(place => (
+                    <h3 className={style.filterTitle}>Место рождения</h3>
+                    {birthPlaces.map(place => (
                         <div
                             key={place}
                             className={style.filterItem}
-                            onClick={() => handleToggle(selectedPlaces, setSelectedPlaces, place)}
-                        >
-                            <div className={`${style.checkbox} ${selectedPlaces.includes(place) ? style.selectedCheckbox : ''}`}>
-                                {selectedPlaces.includes(place) && '✓'}
+                            onClick={() => handleToggle(selectedBirthPlaces, setSelectedBirthPlaces, place)}>
+                            <div className={`${style.checkbox} ${selectedBirthPlaces.includes(place) ? style.selectedCheckbox : ''}`}>
+                                {selectedBirthPlaces.includes(place) && '✓'}
                             </div>
                             {place}
                         </div>
                     ))}
                 </div>
 
+                {/* Фильтр по месту смерти */}
                 <div className={style.filterSection}>
-                    <h3 className={style.filterTitle}>Date Filter</h3>
+                    <h3 className={style.filterTitle}>Место смерти</h3>
+                    {deathPlaces.map(place => (
+                        <div
+                            key={place}
+                            className={style.filterItem}
+                            onClick={() => handleToggle(selectedDeathPlaces, setSelectedDeathPlaces, place)}>
+                            <div className={`${style.checkbox} ${selectedDeathPlaces.includes(place) ? style.selectedCheckbox : ''}`}>
+                                {selectedDeathPlaces.includes(place) && '✓'}
+                            </div>
+                            {place}
+                        </div>
+                    ))}
+                </div>
+
+                {/* Фильтр по воинским частям */}
+                <div className={style.filterSection}>
+                    <h3 className={style.filterTitle}>Воинские части</h3>
+                    {militaryUnits.map(unit => (
+                        <div
+                            key={unit}
+                            className={style.filterItem}
+                            onClick={() => handleToggle(selectedMilitaryUnits, setSelectedMilitaryUnits, unit)}>
+                            <div className={`${style.checkbox} ${selectedMilitaryUnits.includes(unit) ? style.selectedCheckbox : ''}`}>
+                                {selectedMilitaryUnits.includes(unit) && '✓'}
+                            </div>
+                            {unit}
+                        </div>
+                    ))}
+                </div>
+
+                {/* Фильтр по датам */}
+                <div className={style.filterSection}>
+                    <h3 className={style.filterTitle}>Фильтр по датам</h3>
                     <div>
                         <input
                             type="date"
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
-                            placeholder="Start date"
+                            placeholder="Начальная дата"
                         />
                         <input
                             type="date"
                             value={endDate}
                             onChange={(e) => setEndDate(e.target.value)}
-                            placeholder="End date"
+                            placeholder="Конечная дата"
                         />
                     </div>
                 </div>
 
+                {/* Выбранные фильтры */}
                 <div className={style.selectedFilters}>
-                    <div>Selected cities: {selectedCities.join(', ') || 'none'}</div>
-                    <div>Selected places: {selectedPlaces.join(', ') || 'none'}</div>
-                    <div>Selected dates: {startDate} to {endDate}</div>
+                    <div>Места рождения: {selectedBirthPlaces.join(', ') || 'не выбрано'}</div>
+                    <div>Места смерти: {selectedDeathPlaces.join(', ') || 'не выбрано'}</div>
+                    <div>Воинские части: {selectedMilitaryUnits.join(', ') || 'не выбрано'}</div>
+                    <div>Диапазон дат: {startDate} - {endDate}</div>
                 </div>
             </div>
 
+            {/* Основной контент */}
             <div className={style.contentWrapper}>
                 <div className={style.HumanBlocks}>
                     {currentItems.map(elem => (
@@ -142,6 +184,7 @@ export default function Content() {
                     ))}
                 </div>
 
+                {/* Пагинация */}
                 <div className={style.pagination}>
                     <button
                         onClick={() => handlePageChange(currentPage - 1)}

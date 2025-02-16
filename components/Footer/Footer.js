@@ -12,20 +12,20 @@ export default function Footer() {
         <footer className={`${style.Footer} ${montserrat.className}`}>
             <div className={style.footerContent}>
                 <div className={style.logoSection}>
-                    <div className={style.logo}>Book</div>
-                    <div className={style.copyright}>Protect</div>
+                    <div className={style.logo}>Книга</div> {/* Changed from "Book" to "Книга" */}
+                    <div className={style.copyright}>Защита</div> {/* Changed from "Protect" to "Защита" */}
                 </div>
 
                 <div className={style.navSection}>
                     <nav className={style.navLinks}>
-                        <a href="/about">Project</a>
-                        <a href="/memorial">Book</a>
-                        <a href="/map">Map</a>
-                        <a href="/contacts">Cont</a>
+                        <a href="/about">Проект</a> {/* Changed from "Project" to "Проект" */}
+                        <a href="/memorial">Книга</a> {/* Changed from "Book" to "Книга" */}
+                        <a href="/map">Карта</a> {/* Changed from "Map" to "Карта" */}
+                        <a href="/contacts">Контакты</a> {/* Changed from "Cont" to "Контакты" */}
                     </nav>
-                    <button className={style.searchButton}>Seatch</button>
+                    <button className={style.searchButton}>Поиск</button> {/* Changed from "Seatch" to "Поиск" */}
                 </div>
             </div>
         </footer>
-    )
+    );
 }

@@ -1,0 +1,11 @@
+/* MapComponent.module.css */
+.mapContainer {
+    display: flex;
+    justify-content: center; /* Center the map */
+    align-items: center; /* Center the map vertically */
+    margin: 20px; /* Optional margin around the component */
+}
+
+.iframe {
+    border: none; /* Ensure there’s no border */
+}

@@ -8,7 +8,7 @@ const FullInfoComponent = ({ heroData }) => {
         <div className={style.container}>
             <main className={style.mainContent}>
                 <button onClick={() => router.back()} className={style.backButton}>
-                    ← Back
+                    ← Назад {/* Changed from "Back" to "Назад" */}
                 </button>
 
                 <div className={style.heroCard}>
@@ -26,13 +26,13 @@ const FullInfoComponent = ({ heroData }) => {
 
                         <div className={style.datesContainer}>
                             <div className={style.dateSection}>
-                                <h3 className={style.dateTitle}>Birth</h3>
+                                <h3 className={style.dateTitle}>Дата рождения</h3> {/* Changed from "Birth" to "Дата рождения" */}
                                 <p className={style.dateText}>
                                     {heroData.DateAndPlaceOfBirth.join(', ')}
                                 </p>
                             </div>
                             <div className={style.dateSection}>
-                                <h3 className={style.dateTitle}>Death</h3>
+                                <h3 className={style.dateTitle}>Дата смерти</h3> {/* Changed from "Death" to "Дата смерти" */}
                                 <p className={style.dateText}>
                                     {heroData.DateAndPlaceOfDepartureOrDeath.join(', ')}
                                 </p>
@@ -40,21 +40,21 @@ const FullInfoComponent = ({ heroData }) => {
                         </div>
 
                         <div className={style.section}>
-                            <h2>Military Service</h2>
+                            <h2>Военная служба</h2> {/* Changed from "Military Service" to "Военная служба" */}
                             <div className={style.militaryInfo}>
                                 <div className={style.militaryItem}>
-                                    <span className={style.militaryLabel}>Specialty:</span>
+                                    <span className={style.militaryLabel}>Специальность:</span> {/* Changed from "Specialty:" to "Специальность:" */}
                                     {heroData.MilitarySpecialty}
                                 </div>
                                 <div className={style.militaryItem}>
-                                    <span className={style.militaryLabel}>Rank & Unit:</span>
+                                    <span className={style.militaryLabel}>Звание и подразделение:</span> {/* Changed from "Rank & Unit:" to "Звание и подразделение:" */}
                                     {heroData.MilitaryRankAndJobTitle}
                                 </div>
                             </div>
                         </div>
 
                         <div className={style.section}>
-                            <h2>Title Assignment</h2>
+                            <h2>Присвоение звания</h2> {/* Changed from "Title Assignment" to "Присвоение звания" */}
                             <div className={style.titleInfo}>
                                 <p className={style.titleName}>{heroData.TitleAndDocumentAssignment[0]}</p>
                                 <p className={style.titleDescription}>
@@ -64,7 +64,7 @@ const FullInfoComponent = ({ heroData }) => {
                         </div>
 
                         <div className={style.section}>
-                            <h2>Awards & Honors</h2>
+                            <h2>Награды и почести</h2> {/* Changed from "Awards & Honors" to "Награды и почести" */}
                             <ul className={style.awardsList}>
                                 {heroData.Awards.split(', ').map((award, index) => (
                                     <li key={index}>{award}</li>
@@ -73,12 +73,12 @@ const FullInfoComponent = ({ heroData }) => {
                         </div>
 
                         <div className={style.section}>
-                            <h2>Heroic Feat</h2>
+                            <h2>Героический подвиг</h2> {/* Changed from "Heroic Feat" to "Героический подвиг" */}
                             <p className={style.bioText}>{heroData.HeroFeat}</p>
                         </div>
 
                         <div className={style.section}>
-                            <h2>Biography</h2>
+                            <h2>Биография</h2> {/* Changed from "Biography" to "Биография" */}
                             <p className={style.bioText}>{heroData.Biography}</p>
                         </div>
                     </div>
